@@ -1,10 +1,19 @@
 <?php
+	declare(strict_types=1);
+
 	namespace Bolt;
 
 	use DateTimeZone;
 
 	class Validator
 	{
+		private $throw;
+
+		public function __construct(bool $throw = true)
+		{
+			$this->throw = $throw;
+		}
+
 		/**
 		 * Checks validity of given UUID against RFC4122
 		 * @link https://tools.ietf.org/html/rfc4122
