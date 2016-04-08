@@ -1,5 +1,5 @@
 {
-    "name": "cruxoft/bolt-validation",
+    "name": "cruxoft/bolt-validator",
     "description": "Validation module for Bolt",
     "license": "Apache-2.0",
     "keywords": [
