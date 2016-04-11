@@ -23,7 +23,7 @@
 		 */
 		public function uuid($UUID)
 		{
-            if (preg_match('/([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/', strtolower($UUID)))
+            if (!preg_match('/^([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})$/', strtolower($UUID)))
             {
 				if ($this->throw === true)
 				{
