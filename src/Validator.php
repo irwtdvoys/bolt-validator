@@ -3,6 +3,7 @@
 
 	namespace Bolt;
 
+	use Bolt\Exceptions\Validation as Exception;
 	use DateTimeZone;
 
 	class Validator
@@ -23,11 +24,11 @@
 		 */
 		public function uuid($UUID)
 		{
-            if (preg_match('/([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/', strtolower($UUID)))
+            if (!preg_match('/^([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})$/', strtolower($UUID)))
             {
 				if ($this->throw === true)
 				{
-					throw new Exceptions\Validation("Invalid UUID provided");
+					throw new Exception("Invalid UUID provided");
 				}
 
 				return false;
@@ -48,7 +49,7 @@
 			{
 				if ($this->throw === true)
 				{
-					throw new Exceptions\Validation("Invalid APN device token provided");
+					throw new Exception("Invalid APN device token provided");
 				}
 
 				return false;
@@ -71,7 +72,7 @@
 			{
 				if ($this->throw === true)
 				{
-					throw new Exceptions\Validation("Invalid locale provided");
+					throw new Exception("Invalid locale provided");
 				}
 
 				return false;
@@ -93,7 +94,7 @@
 			{
 				if ($this->throw === true)
 				{
-					throw new Exceptions\Validation("Invalid timezone provided");
+					throw new Exception("Invalid timezone provided");
 				}
 
 				return false;
@@ -123,7 +124,7 @@
 			{
 				if ($this->throw === true)
 				{
-					throw new Exceptions\Validation("Invalid coordinates provided");
+					throw new Exception("Invalid coordinates provided");
 				}
 
 				return false;
