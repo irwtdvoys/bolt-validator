@@ -24,7 +24,7 @@
 		 */
 		public function uuid($UUID)
 		{
-            if (!preg_match('/^([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})$/', strtolower($UUID)))
+            if (!preg_match('/^([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})$/i', $UUID))
             {
 				if ($this->throw === true)
 				{
@@ -113,8 +113,8 @@
 		 */
 		public function coordinates($lat, $lng)
 		{
-			$vLat = is_numeric($lat) && floor($lat) !== $lat;
-			$vLng = is_numeric($lng) && floor($lng) !== $lng;
+			$vLat = is_numeric($lat) && (-90 <= $lat) && ($lat <= 90);
+			$vLng = is_numeric($lng) && (-180 <= $lng) && ($lng <= 180);
 
 			if ($vLat === true && $vLng === true)
 			{
