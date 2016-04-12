@@ -113,8 +113,8 @@
 		 */
 		public function coordinates($lat, $lng)
 		{
-			$vLat = is_numeric($lat) && floor($lat) !== $lat;
-			$vLng = is_numeric($lng) && floor($lng) !== $lng;
+			$vLat = is_numeric($lat);
+			$vLng = is_numeric($lng);
 
 			if ($vLat === true && $vLng === true)
 			{
