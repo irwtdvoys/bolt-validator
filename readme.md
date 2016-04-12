@@ -1,1 +1,1 @@
-#bolt-validator (0.1.3)
+#bolt-validator (0.1.4)
