@@ -107,7 +107,6 @@
 		 * Checks the validity of a latitude and longitude in degrees
 		 * @param $lat
 		 * @param $lng
-		 * @return bool|void
 		 * @throws \Exception
 		 * @return boolean
 		 */
@@ -120,15 +119,13 @@
 			{
 				return true;
 			}
-			else
-			{
-				if ($this->throw === true)
-				{
-					throw new Exception("Invalid coordinates provided");
-				}
 
-				return false;
+			if ($this->throw === true)
+			{
+				throw new Exception("Invalid coordinates provided");
 			}
+
+			return false;
 		}
 	}
 ?>
